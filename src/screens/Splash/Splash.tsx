@@ -5,7 +5,6 @@ import {RootStackParamList} from '../../navigations/RootStacks';
 import useStyles from './Splash.Styles';
 import {Images} from '../../constants';
 
-export type SplashScreenProps = {};
 type SplashScreenType = NativeStackScreenProps<RootStackParamList, 'Splash'>;
 
 const SplashScreen: FC<SplashScreenType> = props => {

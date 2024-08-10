@@ -1,27 +1,30 @@
 import {useEffect, useRef, useState} from 'react';
 import {getNextBatchPage} from '../apis/news';
 import {storage} from '../config/utility';
+import {NewsType} from '../types/News';
 
 const useHomeScreen = () => {
   const getPinned = storage.getString('pinned');
   const getLocalNews = storage.getString('news');
   const storedNews = JSON.parse(getLocalNews || '[]');
   const [pinnedNews, setPinnedNews] = useState(getPinned || null);
-  const [news, setNews] = useState<any[]>([]);
+  const [news, setNews] = useState<NewsType[]>([]);
   const timerRef = useRef<NodeJS.Timeout>();
   const currentPage = useRef(1);
+  const refreshInterval = 10000;
+  const initialNewsCount = 10;
 
-  const handlePin = (data: any) => {
+  const handlePin = (data: NewsType) => {
     storage.set('pinned', JSON.stringify(data));
     setPinnedNews(JSON.stringify(data));
   };
-  const handleDelete = (data: any) => {
+  const handleDelete = (data: NewsType) => {
     const filteredNews = news.filter(item => item.title !== data.title);
     setNews(filteredNews);
   };
   useEffect(() => {
     if (getLocalNews) {
-      setNews(storedNews.slice(0, 10));
+      setNews(storedNews.slice(0, initialNewsCount));
     }
   }, []);
   const fetchNextBatch = async () => {
@@ -35,9 +38,10 @@ const useHomeScreen = () => {
         setNews(e.articles.slice(0, 10));
       });
     } else {
+      const newBatchCount = Math.floor(Math.random() * 5) + 1;
       const nextBatch = storedNews.slice(
         currentNewsCount,
-        currentNewsCount + 5,
+        currentNewsCount + newBatchCount,
       );
       setNews(prevNews => [...nextBatch, ...prevNews]);
     }
@@ -55,7 +59,7 @@ const useHomeScreen = () => {
   const startInterval = () => {
     timerRef.current = setInterval(() => {
       fetchNextBatch();
-    }, 10000);
+    }, refreshInterval);
   };
 
   const handleRemovePinned = () => {

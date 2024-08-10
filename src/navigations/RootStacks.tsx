@@ -1,17 +1,17 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {SplashScreen, SplashScreenProps} from '../screens/Splash';
+import {SplashScreen} from '../screens/Splash';
 import {HomeScreen} from '../screens/Home';
 import {screenOptions} from '../config/navigation';
 
 export type RootStackParamList = {
-  Splash: SplashScreenProps;
+  Splash: undefined;
   Home: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const RootStacks = () => {
+const RootStacks: FC = () => {
   return (
     <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen name="Splash" component={SplashScreen} />
