@@ -8,6 +8,7 @@ export const bgTask = async () => {
     method: 'GET',
     headers: commonHeaders(),
   }).then(response => response.json());
+  // filter out the news with url 'https://removed.com'
   const filterRemoved = data.articles.filter(
     (item: NewsType) => item.url !== 'https://removed.com',
   );
