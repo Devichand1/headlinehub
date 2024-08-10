@@ -5,8 +5,8 @@ import {RootStackParamList} from '../../navigations/RootStacks';
 import useHomeScreen from '../../hooks/useHomeScreen';
 import useStyles from './Home.Styles';
 import {Images} from '../../constants';
-import NewsCard from '../../components/NewCard/NewsCard';
 import RefreshIcon from '../../assets/Icons/RefreshIcon';
+import {NewsCard} from '../../components/NewCard';
 
 type HomeScreenType = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
