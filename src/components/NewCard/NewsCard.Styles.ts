@@ -1,4 +1,5 @@
 import {ImageStyle, TextStyle, ViewStyle} from 'react-native';
+import {Colors} from '../../constants';
 const useStyles = () => {
   return {
     cardContainer: {
@@ -8,8 +9,8 @@ const useStyles = () => {
     newsCard: {
       padding: 16,
       flex: 1,
-      backgroundColor: '#fff',
-      borderBottomColor: 'lightgray',
+      backgroundColor: Colors.white,
+      borderBottomColor: Colors.lightgray,
       borderBottomWidth: 1,
     } as ViewStyle,
     cardHeader: {
@@ -35,7 +36,7 @@ const useStyles = () => {
     cardAction: {
       position: 'absolute',
       right: 0,
-      backgroundColor: '#4BBDFC',
+      backgroundColor: Colors.primary,
       height: 'auto',
       flexDirection: 'column',
       alignItems: 'center',
@@ -45,7 +46,7 @@ const useStyles = () => {
       zIndex: -1,
     } as ViewStyle,
     actionTitle: {
-      color: '#fff',
+      color: Colors.white,
       marginBottom: 8,
       fontSize: 12,
     } as TextStyle,
