@@ -1,4 +1,3 @@
-import {useQuery} from '@tanstack/react-query';
 import Config from 'react-native-config';
 
 export const END_POINT =
