@@ -33,7 +33,7 @@ const Home: FC<HomeScreenType> = () => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       {renderHeader()}
       <FlatList
         ListHeaderComponent={

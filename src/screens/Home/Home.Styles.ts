@@ -15,6 +15,9 @@ const useStyles = () => {
       width: 130,
       resizeMode: 'contain',
     } as ImageStyle,
+    container: {
+      backgroundColor: '#fff',
+    } as ViewStyle,
   };
 };
 export default useStyles;

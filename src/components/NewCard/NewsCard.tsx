@@ -78,16 +78,7 @@ const NewsCard: FC<NewsCardType> = ({
   const renderSwipable = () => {
     return (
       <GestureDetector gesture={pan}>
-        <View
-          style={{
-            width: 100,
-            position: 'absolute',
-            right: 0,
-            top: 0,
-            zIndex: 1,
-            bottom: 0,
-          }}
-        />
+        <View style={styles.gesture} />
       </GestureDetector>
     );
   };

@@ -39,8 +39,7 @@ const useStyles = () => {
       height: 'auto',
       flexDirection: 'column',
       alignItems: 'center',
-      padding: 20,
-      paddingHorizontal: 16,
+      padding: 16,
       borderTopLeftRadius: 20,
       borderBottomLeftRadius: 20,
       zIndex: -1,
@@ -55,6 +54,14 @@ const useStyles = () => {
       alignItems: 'center',
       marginBottom: 8,
       gap: 8,
+    } as ViewStyle,
+    gesture: {
+      width: 100,
+      position: 'absolute',
+      right: 0,
+      top: 0,
+      zIndex: 1,
+      bottom: 0,
     } as ViewStyle,
   };
 };

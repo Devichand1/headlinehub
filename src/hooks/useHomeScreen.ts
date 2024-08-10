@@ -37,7 +37,7 @@ const useHomeScreen = () => {
     } else {
       const nextBatch = storedNews.slice(
         currentNewsCount,
-        currentNewsCount + 10,
+        currentNewsCount + 5,
       );
       setNews(prevNews => [...nextBatch, ...prevNews]);
     }
@@ -61,7 +61,7 @@ const useHomeScreen = () => {
   const handleRemovePinned = () => {
     storage.delete('pinned');
     setPinnedNews(null);
-  }
+  };
 
   return {
     data: news,
