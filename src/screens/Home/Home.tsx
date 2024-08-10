@@ -11,7 +11,14 @@ import RefreshIcon from '../../assets/Icons/RefreshIcon';
 type HomeScreenType = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 const Home: FC<HomeScreenType> = () => {
-  const {data, fetchNextBatchManually, pinnedNews, handlePin} = useHomeScreen();
+  const {
+    data,
+    fetchNextBatchManually,
+    handleRemovePinned,
+    pinnedNews,
+    handleDelete,
+    handlePin,
+  } = useHomeScreen();
   const styles = useStyles();
 
   const renderHeader = () => {
@@ -30,10 +37,22 @@ const Home: FC<HomeScreenType> = () => {
       {renderHeader()}
       <FlatList
         ListHeaderComponent={
-          pinnedNews ? <NewsCard isPinned={true} item={pinnedNews} /> : null
+          pinnedNews ? (
+            <NewsCard
+              isPinned={true}
+              item={pinnedNews}
+              handleDelete={handleRemovePinned}
+            />
+          ) : null
         }
         data={data}
-        renderItem={({item}) => <NewsCard handlePin={handlePin} item={item} />}
+        renderItem={({item}) => (
+          <NewsCard
+            handlePin={() => handlePin(item)}
+            item={item}
+            handleDelete={() => handleDelete(item)}
+          />
+        )}
         initialNumToRender={10}
         keyExtractor={(item, index) => item.title + index.toString()}
       />
