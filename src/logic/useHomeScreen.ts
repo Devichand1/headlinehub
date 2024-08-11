@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from 'react';
-import {useNewsApi} from '../apis/news';
+import {useNewsApi} from '../api/news';
 import {storage} from '../config/utility';
 import {NewsType} from '../types/News';
 

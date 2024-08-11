@@ -6,7 +6,6 @@ import {bgTask} from './BgTask';
 
 AppRegistry.registerComponent(appName, () => App);
 const initBackgroundFetch = async () => {
-    console.log('calling headless task');
   await BackgroundFetch.configure(
     {
       minimumFetchInterval: 15,

@@ -1,6 +1,6 @@
 import {NewsType} from './src/types/News';
 
-const {END_POINT, commonHeaders} = require('./src/apis/news');
+const {END_POINT, commonHeaders} = require('./src/api/news');
 const {storage} = require('./src/config/utility');
 
 export const bgTask = async () => {
