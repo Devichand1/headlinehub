@@ -16,7 +16,7 @@ import Animated, {
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import DeleteIcon from '../../assets/Icons/DeleteIcon';
 import PinIcon from '../../assets/Icons/PinIcon';
-import { Colors } from '../../constants';
+import {Colors} from '../../constants';
 
 type NewsCardType = {
   item: any;

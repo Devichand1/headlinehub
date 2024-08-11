@@ -27,7 +27,7 @@ const fetchData = async ({pageParam}: {pageParam: Number}) => {
 
 export const useNewsApi = () => {
   return useInfiniteQuery({
-    queryKey: ['jobs'],
+    queryKey: ['apireq'],
     queryFn: fetchData,
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages, lastPageParam) => {
