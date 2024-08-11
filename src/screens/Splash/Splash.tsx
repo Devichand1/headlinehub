@@ -15,7 +15,7 @@ const SplashScreen: FC<SplashScreenType> = props => {
     navigation.replace('Home');
   };
   useEffect(() => {
-    const input = setTimeout(navigateToHome, 2000);
+    const input = setTimeout(navigateToHome, 1500);
     return () => clearTimeout(input);
   }, []);
   return (

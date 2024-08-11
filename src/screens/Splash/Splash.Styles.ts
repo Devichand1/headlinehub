@@ -1,4 +1,5 @@
 import {ImageStyle, ViewStyle} from 'react-native';
+import {Colors} from '../../constants';
 
 const useStyles = () => {
   return {
@@ -6,6 +7,7 @@ const useStyles = () => {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      backgroundColor: Colors.white,
     } as ViewStyle,
     logo: {
       width: 250,
