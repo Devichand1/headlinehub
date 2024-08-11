@@ -10,37 +10,6 @@ import {bgTask} from './BgTask';
 const queryClient = new QueryClient();
 
 function App(): React.JSX.Element {
-  useEffect(() => {
-    const initBackgroundFetch = async () => {
-      await BackgroundFetch.configure(
-        {
-          minimumFetchInterval: 15,
-        },
-        async (taskId: string) => {
-          try {
-            await bgTask();
-          } catch (error) {
-            console.error('[BackgroundFetch] error:', error);
-          }
-          BackgroundFetch.finish(taskId);
-        },
-        (taskId: string) => {
-          BackgroundFetch.finish(taskId);
-        },
-      );
-    };
-    BackgroundFetch.scheduleTask({
-      taskId: 'fetchBgTask',
-      delay: 0,
-      forceAlarmManager: true,
-      periodic: false,
-    });
-    initBackgroundFetch();
-    return () => {
-      BackgroundFetch.stop();
-    };
-  }, []);
-
   return (
     <GestureHandlerRootView style={styles.container}>
       <QueryClientProvider client={queryClient}>

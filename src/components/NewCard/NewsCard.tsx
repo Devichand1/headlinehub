@@ -16,6 +16,7 @@ import Animated, {
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import DeleteIcon from '../../assets/Icons/DeleteIcon';
 import PinIcon from '../../assets/Icons/PinIcon';
+import { Colors } from '../../constants';
 
 type NewsCardType = {
   item: any;
@@ -87,7 +88,7 @@ const NewsCard: FC<NewsCardType> = ({
       <Animated.View style={[styles.newsCard, animatedCardStyle]}>
         {isPinned && (
           <View style={styles.pinLabel}>
-            <PinIcon color={'#444444'} width={14} />
+            <PinIcon color={Colors.gray} width={14} />
             <Text>Pinned on Top</Text>
           </View>
         )}

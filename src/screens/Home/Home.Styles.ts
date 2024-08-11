@@ -1,4 +1,5 @@
-import {ImageStyle, TextStyle, ViewStyle} from 'react-native';
+import {ImageStyle, ViewStyle} from 'react-native';
+import {Colors} from '../../constants';
 
 const useStyles = () => {
   return {
@@ -16,7 +17,7 @@ const useStyles = () => {
       resizeMode: 'contain',
     } as ImageStyle,
     container: {
-      backgroundColor: '#fff',
+      backgroundColor: Colors.white,
     } as ViewStyle,
   };
 };

@@ -12,5 +12,6 @@ export const bgTask = async () => {
   const filterRemoved = data.articles.filter(
     (item: NewsType) => item.url !== 'https://removed.com',
   );
-  storage.set('news', JSON.stringify(filterRemoved));
+  const payloadToStore = {articles: filterRemoved};
+  storage.set('news', JSON.stringify(payloadToStore));
 };

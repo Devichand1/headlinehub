@@ -5,6 +5,7 @@ const useStyles = () => {
     cardContainer: {
       flexDirection: 'row',
       alignItems: 'center',
+      overflow: 'hidden',
     } as ViewStyle,
     newsCard: {
       padding: 16,
