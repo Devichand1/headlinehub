@@ -26,6 +26,7 @@ const useHomeScreen = () => {
     }
   }, [data]);
   const fetchNextBatch = async () => {
+    if (!data?.pages[0]?.articles) return;
     const currentNewsCount = news.length;
     if (currentNewsCount >= data?.pages[0].articles.length) {
       clearInterval(timerRef.current);

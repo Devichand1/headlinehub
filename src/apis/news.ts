@@ -19,6 +19,7 @@ const fetchData = async ({pageParam}: {pageParam: Number}) => {
     const response = await fetch(`${END_POINT}${pageParam}`, {
       headers: commonHeaders(),
     });
+
     const data = await response.json();
     storage.set('news', JSON.stringify(data));
     return data;
